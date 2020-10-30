@@ -1,39 +1,41 @@
+  
 <!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8">
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
+  <!-- Import vega-embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  
 </head>
-<body>  
-  <div id="vis"></div>
+<body>
 
-  <script>
-    const spec = "https://raw.githubusercontent.com/jaydai0007/FIT3179/main/folder1/visualization.vl.json";
-  	vegaEmbed("#vis", spec)
-    	// result.view provides access to the Vega View API
-      .then(result => console.log(result))
-      .catch(console.warn);
-  </script>
-	
+<h1>Australian bush fire</h1>
+
+<h2>This is the first visualisation</h2>
+<div id="map1"></div>
+
+<h2>This is the second visualisation</h2>
+<div id="map2"></div>
+
+<script type="text/javascript">
+  
+  var vis1 = "visualization.vl.json";
+  
+  vegaEmbed('#map1', vis1).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var vis2 = "frp.json";
+  
+  vegaEmbed('#map2', vis2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
 </body>
-
-<!DOCTYPE html>
-<head>
-  <meta charset="utf-8">
-  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vega-lite@4"></script>
-	<script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-</head>
-<body>  
-  <div id="vis"></div>
-
-  <script>
-    const spec = "https://raw.githubusercontent.com/jaydai0007/FIT3179/main/folder1/frp.json";
-  	vegaEmbed("#vis", spec)
-    	// result.view provides access to the Vega View API
-      .then(result => console.log(result))
-      .catch(console.warn);
-  </script>
-	
-</body>
+</html>
