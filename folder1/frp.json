@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 500,
+  "title": " Fire radiative power (FRP) of Australia's bushfires ",
+  "projection": {"type": "equirectangular"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jaydai0007/FIT3179/main/folder1/AUS_2016_AUST.json",
+        "format": {"type": "topojson", "feature": "AUS_2016_AUST"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "gray"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jaydai0007/FIT3179/main/folder1/frp_1112.csv"
+      },
+      "mark": {"type": "circle", "tooltip": {"content": "data"}},
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {"field": "frp", "type": "quantitative"},
+        "color": {
+          "field": "frp",
+          "type": "quantitative",
+          "scale": {"scheme": "darkred"}
+        }
+      }
+    }
+  ],
+  "config": {}
+}
