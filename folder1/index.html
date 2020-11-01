@@ -24,6 +24,9 @@
   
 <h2>This is the third visualisation</h2>
 <div id="map3"></div>
+  
+<h2>This is the forth visualisation</h2>
+<div id="map4"></div>
 
 <script type="text/javascript">
   
@@ -42,6 +45,12 @@
   var vis3 = "map1.json";
   
   vegaEmbed('#map3', vis3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+    
+  var vis4 = "interactive_map.json";
+  
+  vegaEmbed('#map4', vis4).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
