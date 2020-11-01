@@ -4,9 +4,9 @@
   "data": {
     "url": "https://raw.githubusercontent.com/jaydai0007/FIT3179/main/Graph2/date_data.csv"
   },
-  "mark": "bar",
+  "mark": {"type" : "bar","tooltip":true},
   "encoding": {
-    "x": {"field": "acq_date", "type": "ordinal"},
+    "x": {"field": "acq_date",  "type": "ordinal"},
     "y": {"field": "frp", "type": "quantitative"}
   },
   "config": {}
