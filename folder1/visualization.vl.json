@@ -16,15 +16,15 @@
       "data": {
         "url": "https://raw.githubusercontent.com/jaydai0007/FIT3179/main/folder1/date1117.csv"
       },
-      "mark": {"type": "circle", "tooltip": {"content": "data"}},
+      "mark": {"type": "square", "tooltip": {"content": "data"}},
       "encoding": {
         "longitude": {"field": "longitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
-        "size": {"value": 10},
+        "size": {"value": 40},
         "color": {
           "field": "brightness",
           "type": "quantitative",
-          "scale": {"scheme": "reds"}
+          "scale": {"scheme": "darkred","domainMid":320}
         }
       }
     }
