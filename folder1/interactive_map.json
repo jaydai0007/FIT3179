@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 500,
+  "title": " Fire radiative power (FRP) of Australia's bushfires ",
+  "projection": {"type": "equirectangular"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/jaydai0007/FIT3179/main/folder1/day.csv"
+  },
+  "params": [
+    {
+      "name": "date",
+      "value": 1,
+      "bind": {
+        "input": "range",
+        "min": 1,
+        "max": 30,
+        "step": 1,
+        "name": "Date: "
+      }
+    }
+  ],
+  "transform": [
+    {"filter": "datum.acq_date == date"}
+  ],
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jaydai0007/FIT3179/main/folder1/map.json",
+        "format": {"type": "topojson", "feature": "map"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "gray"}
+    },
+    {
+      "selection": {},
+      "mark": {"type": "circle", "tooltip": {"content": "data"}},
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {"field": "frp", "type": "quantitative"},
+        "color": {
+          "field": "frp",
+          "type": "quantitative",
+          "scale": {"scheme": "darkred"}
+        }
+      }
+    }
+  ],
+  "config": {}
+}
