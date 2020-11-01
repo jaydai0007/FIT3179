@@ -121,24 +121,31 @@
   </div> <!-- end page -->
    
 <script type="text/javascript">
-  var specVis1 = "./normalised-stacked-bars-responsive.json";
-  var specVis2= "./line-chart-responsive.json";
-
-  vegaEmbed('#vis1', specVis1, {"actions": false}).then(function(result) {
+  var vis1 = "visualization.vl.json";
+  
+  vegaEmbed('#map1', vis1).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
   
-   vegaEmbed('#vis2', specVis2, {"actions": false}).then(function(result) {
+  var vis2 = "frp.json";
+  
+  vegaEmbed('#map2', vis2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+  
+  var vis3 = "map1.json";
+  
+  vegaEmbed('#map3', vis3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+    
+  var vis4 = "interactive_map.json";
+  
+  vegaEmbed('#map4', vis4).then(function(result) {
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 
-  vegaEmbed('#vis3', specVis1, {"actions": false}).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
 
-  vegaEmbed('#vis4', specVis2, {"actions": false}).then(function(result) {
-    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-  }).catch(console.error);
 </script>
 </body>
 </html>
