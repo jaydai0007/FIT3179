@@ -1,32 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 800,
-  "height": 500,
-  "title": "bush fire brightness point",
-  "projection": {"type": "equirectangular"},
-  "layer": [
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/jaydai0007/FIT3179/main/folder1/map.json",
-        "format": {"type": "topojson", "feature": "map"}
-      },
-      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "gray"}
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/jaydai0007/FIT3179/main/folder1/date1117.csv"
-      },
-      "mark": {"type": "square", "tooltip": {"content": "data"}},
-      "encoding": {
-        "longitude": {"field": "longitude", "type": "quantitative"},
-        "latitude": {"field": "latitude", "type": "quantitative"},
-        "size": {"value": 40},
-        "color": {
-          "field": "brightness",
-          "type": "quantitative",
-          "scale": {"scheme": "darkred","domainMid":320}
-        }
-      }
-    }
-  ]
+  "title": "FRP in January 2020",
+  "data": {
+    "url": "https://raw.githubusercontent.com/jaydai0007/FIT3179/main/Graph2/date_data.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "acq_date", "type": "ordinal"},
+    "y": {"field": "frp", "type": "quantitative"}
+  },
+  "config": {}
 }
