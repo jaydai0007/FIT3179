@@ -8,7 +8,7 @@
     {
       "data": {
         "url": "https://raw.githubusercontent.com/jaydai0007/FIT3179/main/folder1/map.json",
-        "format": {"type": "topojson", "feature": "AUS_2016_AUST"}
+        "format": {"type": "topojson", "feature": "map"}
       },
       "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "gray"}
     },
