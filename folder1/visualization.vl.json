@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 300,
+  "width": 500,
   "height": 150,
   "title": "FRP in January 2020",
   "data": {
